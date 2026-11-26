@@ -294,6 +294,7 @@
 #ipf-books .author-chip span{font-size:18px;color:var(--muted)}
 @media (max-width:600px){#ipf-books .author-chip span{font-size:15px}#ipf-books .author-chip b{font-size:23px}#ipf-books .author-chip img{width:58px;height:58px}}
 @media (max-width:700px){#ipf-books .reader .page.l{display:none}#ipf-books .reader .page.r{border-radius:10px}}
+#ipf-books .wmap-fig svg{cursor:grab}
 </style>
 
 <div class="xmas-band"><svg class="xb-ico" viewBox="0 0 20 24" width="16" height="19" aria-hidden="true"><path d="M10 1l2 3.2h-1.2l3.4 4.6h-1.6l4 5.4h-2l4 5.3H1.4l4-5.3h-2l4-5.4H5.8l3.4-4.6H8z" fill="#e8cf96"/><rect x="8.6" y="19.5" width="2.8" height="3.5" fill="#c9a45c"/></svg> <b>Order now to receive it before Christmas</b> <a href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">Order on Amazon &rarr;</a></div>
@@ -446,7 +447,7 @@
           <g id="ipf-pins"></g>
         </svg>
       </div>
-      <div class="wmap-hint">Tap a number to explore each chapter</div>
+      <div class="wmap-hint">&larr; Drag the map &middot; tap a number &rarr;</div>
       <div class="wmap-card" id="ipf-card" aria-live="polite">
         <div class="wmap-img"><img id="ipf-card-img" src="m-14.jpg" alt=""></div>
         <div class="wmap-txt"><div class="n" id="ipf-card-n">Chapter I</div><h3 id="ipf-card-t"></h3><p id="ipf-card-d"></p>
@@ -560,13 +561,22 @@
       g.innerHTML='<circle class="halo" cx="'+p.x+'" cy="'+p.y+'" r="20"/><circle class="ring" cx="'+p.x+'" cy="'+p.y+'" r="11"/><circle class="dot" cx="'+p.x+'" cy="'+p.y+'" r="11"/><text x="'+p.x+'" y="'+p.y+'" dominant-baseline="central" dy=".05em">'+p.n+'</text>';
       g.addEventListener('click',function(){auto=false;show(i);});g.addEventListener('keydown',function(e){if(e.key==='Enter'){auto=false;show(i);}});pins.appendChild(g);els.push(g);});
     var im=document.getElementById('ipf-card-img');
-    function show(i){mi=(i+S.length)%S.length;var p=S[mi];els.forEach(function(e,k){e.classList.toggle('on',k===mi);});
+    function show(i){mi=(i+S.length)%S.length;var p=S[mi];els.forEach(function(e,k){e.classList.toggle('on',k===mi);});if(window.ipfFocus)window.ipfFocus(p);
       document.getElementById('ipf-card-n').textContent='Chapter '+p.n;document.getElementById('ipf-card-t').textContent=p.t;document.getElementById('ipf-card-d').textContent=p.d;
       im.classList.add('fade');setTimeout(function(){im.onload=function(){im.classList.remove('fade');im.style.transform='scale(1)';};im.style.transform='scale(1.08)';im.style.objectPosition=p.pos||'';im.src=p.img;im.alt=p.t;},250);}
     document.getElementById('ipf-mprev').addEventListener('click',function(){auto=false;show(mi-1);});
     document.getElementById('ipf-mnext').addEventListener('click',function(){auto=false;show(mi+1);});
     show(0);setInterval(function(){if(auto)show(mi+1);},5000);
-    var msvg=document.getElementById('ipf-map'),mmq=window.matchMedia('(max-width:760px)');function vb(){msvg.setAttribute('viewBox',mmq.matches?'505 108 392 160':'185 95 740 235');}
+    var msvg=document.getElementById('ipf-map'),mmq=window.matchMedia('(max-width:760px)'),VW=392,vx=505,anim;
+    function vb(){msvg.setAttribute('viewBox',mmq.matches?(vx+' 108 '+VW+' 160'):'185 95 740 235');}
+    function clamp(x){return Math.max(185,Math.min(925-VW,x));}
+    function panTo(x){cancelAnimationFrame(anim);var from=vx,to=clamp(x),t0=performance.now();(function st(t){var k=Math.min(1,(t-t0)/600);k=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;vx=from+(to-from)*k;vb();if(k<1)anim=requestAnimationFrame(st);})(t0);}
+    var drag=null;msvg.style.touchAction='pan-y';
+    msvg.addEventListener('pointerdown',function(e){if(!mmq.matches)return;drag={x:e.clientX,v:vx,moved:false};});
+    window.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-drag.x;if(Math.abs(dx)>4)drag.moved=true;vx=clamp(drag.v-dx*VW/msvg.clientWidth);vb();});
+    window.addEventListener('pointerup',function(){setTimeout(function(){drag=null;},0);});
+    msvg.addEventListener('click',function(e){if(drag&&drag.moved){e.stopPropagation();e.preventDefault();}},true);
+    window.ipfFocus=function(p){if(mmq.matches&&(p.x<vx+25||p.x>vx+VW-25))panTo(p.x-VW/2);};
     vb();if(mmq.addEventListener)mmq.addEventListener('change',vb);else mmq.addListener(vb);}
   // Diaporama d'arrière-plan
   root.querySelectorAll('.bgshow').forEach(function(bg){var sl=bg.querySelectorAll('.slide'),si=0;if(sl.length>1)setInterval(function(){sl[si].classList.remove('on');si=(si+1)%sl.length;sl[si].classList.add('on');},7000);});
