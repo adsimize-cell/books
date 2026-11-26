@@ -254,10 +254,10 @@
 #ipf-books .sp.center{hyphens:none;-webkit-hyphens:none;text-align:center}
 #ipf-books .wmap-hint{display:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:-10px 0 4px;text-align:center}
 @media (max-width:760px){
-#ipf-books .wmap-fig{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -22px}
+#ipf-books .wmap-fig{margin:0 -22px}
 #ipf-books .wmap-fig::-webkit-scrollbar{display:none}
-#ipf-books .wmap-fig svg{width:820px;max-width:none}
-#ipf-books .wmap-hint{display:block}
+#ipf-books .wmap-fig svg{width:100%}
+#ipf-books .wmap-hint{display:block;margin-top:4px}
 #ipf-books .wmap-card{border-radius:16px}
 #ipf-books .wmap-img{aspect-ratio:16/11}
 #ipf-books .wmap-txt{padding:20px 22px 22px;text-align:center;align-items:center}
@@ -293,6 +293,7 @@
 #ipf-books .author-chip b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;color:var(--cream)}
 #ipf-books .author-chip span{font-size:18px;color:var(--muted)}
 @media (max-width:600px){#ipf-books .author-chip span{font-size:15px}#ipf-books .author-chip b{font-size:23px}#ipf-books .author-chip img{width:58px;height:58px}}
+@media (max-width:700px){#ipf-books .reader .page.l{display:none}#ipf-books .reader .page.r{border-radius:10px}}
 </style>
 
 <div class="xmas-band"><svg class="xb-ico" viewBox="0 0 20 24" width="16" height="19" aria-hidden="true"><path d="M10 1l2 3.2h-1.2l3.4 4.6h-1.6l4 5.4h-2l4 5.3H1.4l4-5.3h-2l4-5.4H5.8l3.4-4.6H8z" fill="#e8cf96"/><rect x="8.6" y="19.5" width="2.8" height="3.5" fill="#c9a45c"/></svg> <b>Order now to receive it before Christmas</b> <a href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">Order on Amazon &rarr;</a></div>
@@ -445,7 +446,7 @@
           <g id="ipf-pins"></g>
         </svg>
       </div>
-      <div class="wmap-hint">&larr; Swipe the map &middot; tap a number &rarr;</div>
+      <div class="wmap-hint">Tap a number to explore each chapter</div>
       <div class="wmap-card" id="ipf-card" aria-live="polite">
         <div class="wmap-img"><img id="ipf-card-img" src="m-14.jpg" alt=""></div>
         <div class="wmap-txt"><div class="n" id="ipf-card-n">Chapter I</div><h3 id="ipf-card-t"></h3><p id="ipf-card-d"></p>
@@ -565,11 +566,8 @@
     document.getElementById('ipf-mprev').addEventListener('click',function(){auto=false;show(mi-1);});
     document.getElementById('ipf-mnext').addEventListener('click',function(){auto=false;show(mi+1);});
     show(0);setInterval(function(){if(auto)show(mi+1);},5000);
-    var mf=root.querySelector('.wmap-fig');function ctr(){if(mf&&mf.scrollWidth>mf.clientWidth+5)mf.scrollLeft=mf.scrollWidth*0.58-mf.clientWidth/2;}
-    var done=false;function ctr2(){if(!mf)return;var t=mf.scrollWidth*0.645-mf.clientWidth/2;if(mf.scrollWidth>mf.clientWidth+5){mf.scrollLeft=t;if(Math.abs(mf.scrollLeft-t)<3)done=true;}}
-    ctr2();requestAnimationFrame(ctr2);window.addEventListener('load',ctr2);setTimeout(ctr2,600);setTimeout(ctr2,1500);
-    if(mf&&'IntersectionObserver' in window){var mio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!mf.dataset.touched){ctr2();setTimeout(ctr2,300);}});});mio.observe(mf);mf.addEventListener('touchstart',function(){mf.dataset.touched=1;},{passive:true});}
-    window.addEventListener('resize',function(){if(!mf.dataset.touched)ctr2();});}
+    var msvg=document.getElementById('ipf-map'),mmq=window.matchMedia('(max-width:760px)');function vb(){msvg.setAttribute('viewBox',mmq.matches?'505 108 392 160':'185 95 740 235');}
+    vb();if(mmq.addEventListener)mmq.addEventListener('change',vb);else mmq.addListener(vb);}
   // Diaporama d'arrière-plan
   root.querySelectorAll('.bgshow').forEach(function(bg){var sl=bg.querySelectorAll('.slide'),si=0;if(sl.length>1)setInterval(function(){sl[si].classList.remove('on');si=(si+1)%sl.length;sl[si].classList.add('on');},7000);});
   // Extrait : texte en fondu
