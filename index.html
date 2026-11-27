@@ -304,7 +304,7 @@
 #ipf-books .bf-book .btn{margin-top:8px;font-size:16px;padding:12px 22px}
 #ipf-books .bf-note{font-size:17px!important;margin:14px auto 0!important;color:#d8c9b0!important;letter-spacing:.02em}
 
-#ipf-books .xmas-band .bf-tag{background:#fff;color:#000;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8em;padding:4px 10px;border-radius:3px}
+#ipf-books .xmas-band .xb-short{display:none}#ipf-books .xmas-band .bf-tag{background:#fff;color:#000;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8em;padding:4px 10px;border-radius:3px}
 #ipf-books .offer{background:#000 !important}
 #ipf-books .offer-card{position:relative}
 #ipf-books .bf-giant{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,6.2vw,74px);line-height:1;letter-spacing:.22em;padding-left:.22em;color:var(--gold2);margin:0 auto 20px;max-width:100%;overflow-wrap:anywhere}
@@ -313,7 +313,7 @@
 #ipf-books .bf-sale{position:absolute;top:14px;right:14px;z-index:2;background:var(--gold2);color:#000;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:13px;padding:6px 12px;border-radius:3px}
 #ipf-books .bf-was{color:var(--muted);font-size:15px}
 #ipf-books .bf-was s{text-decoration-color:var(--gold);text-decoration-thickness:2px}
-@media (max-width:600px){#ipf-books .bf-giant{letter-spacing:.12em;padding-left:.12em}#ipf-books .xmas-band .bf-tag{font-size:11px;padding:3px 7px}}
+@media (max-width:600px){#ipf-books .xmas-band .xb-lt,#ipf-books .xmas-band .xb-long{display:none}#ipf-books .xmas-band .xb-short{display:inline}#ipf-books .xmas-band .bf-tag{white-space:nowrap}#ipf-books .bf-giant{letter-spacing:.12em;padding-left:.12em}#ipf-books .xmas-band .bf-tag{font-size:11px;padding:3px 7px}}
 #ipf-books .bf-trio{display:flex;justify-content:center;gap:28px;margin:34px 0 22px;flex-wrap:wrap}
 #ipf-books .bf-trio figure{position:relative;margin:0;width:180px}
 #ipf-books .bf-trio img{height:250px;width:auto;border-radius:3px 7px 7px 3px;box-shadow:14px 20px 40px -16px rgba(0,0,0,.9)}
@@ -329,7 +329,7 @@
 @media (max-width:600px){#ipf-books .bf-books{grid-template-columns:1fr}#ipf-books .bf-book img{height:190px}}
 </style>
 
-<div class="xmas-band"><span class="bf-tag">Black Friday</span> <b>Buy 2 books, get the 3rd free &middot; Limited-time offer</b> <a href="#ipf-offer">Explore the offer &rarr;</a></div>
+<div class="xmas-band"><span class="bf-tag">Black Friday</span> <b><span class="xb-long">Buy 2 books, get the 3rd free</span><span class="xb-short">Buy 2, get the 3rd free</span><span class="xb-lt"> &middot; Limited-time offer</span></b> <a href="#ipf-offer">Explore the offer &rarr;</a></div>
 <!-- HERO -->
 <header class="hero">
   <div class="bgshow hero-bg" aria-hidden="true"><div class="slide on" style="background-image:url(art-14.jpg)"></div><div class="slide" style="background-image:url(art-140.jpg)"></div><div class="slide" style="background-image:url(art-60.jpg)"></div><div class="slide" style="background-image:url(art-22.jpg)"></div><div class="slide" style="background-image:url(art-127.jpg)"></div><div class="slide" style="background-image:url(art-6.jpg)"></div></div>
