@@ -7,7 +7,7 @@
 <title>The Books of Creezy Courtoy | International Perfume Foundation</title>
 <meta name="description" content="Discover the books of Creezy Courtoy, founder of the International Perfume Foundation: The Sacred Heritage of Perfume, World Perfume Heritage and Natural Perfumery.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body style="margin:0">
 
@@ -28,7 +28,7 @@
 #ipf-books .btn-ghost:hover{background:rgba(201,164,92,.1)}
 
 /* XMAS BAND */
-#ipf-books .xmas-band{position:sticky;top:0;z-index:60;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 14px;padding:13px 20px;background:linear-gradient(90deg,#7a2235,#a8344c,#7a2235);color:#fff3e6;font-size:18px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+#ipf-books .xmas-band{position:sticky;top:0;z-index:60;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 14px;padding:13px 20px;background:#000;border-bottom:1px solid rgba(201,164,92,.5);color:#fff;font-size:18px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.35)}
 #ipf-books .xmas-band b{font-weight:500;letter-spacing:.02em}
 #ipf-books .xmas-band .xb-ico{display:inline-block;vertical-align:-3px;flex:none}
 #ipf-books .xmas-band .xb-sep{opacity:.6}
@@ -295,21 +295,53 @@
 @media (max-width:600px){#ipf-books .author-chip span{font-size:15px}#ipf-books .author-chip b{font-size:23px}#ipf-books .author-chip img{width:58px;height:58px}}
 @media (max-width:700px){#ipf-books .reader .page.l{display:none}#ipf-books .reader .page.r{border-radius:10px}}
 #ipf-books .wmap-fig svg{cursor:grab}
+#ipf-books .bf-books{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin:34px 0 18px}
+#ipf-books .bf-book{display:flex;flex-direction:column;align-items:center;gap:10px;padding:26px 18px;border-radius:16px;background:rgba(255,255,255,.03)}
+#ipf-books .bf-book img{height:220px;width:auto;border-radius:3px 7px 7px 3px;box-shadow:14px 20px 40px -16px rgba(0,0,0,.85);transition:transform .4s}
+#ipf-books .bf-book:hover img{transform:translateY(-6px)}
+#ipf-books .bf-t{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--cream);margin-top:8px}
+#ipf-books .bf-p{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+#ipf-books .bf-book .btn{margin-top:8px;font-size:16px;padding:12px 22px}
+#ipf-books .bf-note{font-size:17px!important;margin:14px auto 0!important;color:#d8c9b0!important;letter-spacing:.02em}
+
+#ipf-books .xmas-band .bf-tag{background:#fff;color:#000;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8em;padding:4px 10px;border-radius:3px}
+#ipf-books .offer{background:#000 !important}
+#ipf-books .offer-card{position:relative}
+#ipf-books .bf-giant{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,6.2vw,74px);line-height:1;letter-spacing:.22em;padding-left:.22em;color:var(--gold2);margin:0 auto 20px;max-width:100%;overflow-wrap:anywhere}
+#ipf-books .bf-badge{display:inline-block;background:var(--gold2);color:#000;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:14px;padding:8px 18px;border-radius:3px;margin-bottom:18px}
+#ipf-books .bf-book{position:relative;background:#0d0d0d;border:1px solid rgba(201,164,92,.3)}
+#ipf-books .bf-sale{position:absolute;top:14px;right:14px;z-index:2;background:var(--gold2);color:#000;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:13px;padding:6px 12px;border-radius:3px}
+#ipf-books .bf-was{color:var(--muted);font-size:15px}
+#ipf-books .bf-was s{text-decoration-color:var(--gold);text-decoration-thickness:2px}
+@media (max-width:600px){#ipf-books .bf-giant{letter-spacing:.12em;padding-left:.12em}#ipf-books .xmas-band .bf-tag{font-size:11px;padding:3px 7px}}
+#ipf-books .bf-trio{display:flex;justify-content:center;gap:28px;margin:34px 0 22px;flex-wrap:wrap}
+#ipf-books .bf-trio figure{position:relative;margin:0;width:180px}
+#ipf-books .bf-trio img{height:250px;width:auto;border-radius:3px 7px 7px 3px;box-shadow:14px 20px 40px -16px rgba(0,0,0,.9)}
+#ipf-books .bf-trio figcaption{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--cream);margin-top:12px;line-height:1.2}
+#ipf-books .bf-trio .bf-sale{top:-10px;right:0}
+#ipf-books .bf-formula{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--muted);margin-bottom:22px}
+#ipf-books .bf-formula span{color:var(--gold2)}
+#ipf-books .bf-cta{font-size:19px;padding:16px 34px}
+#ipf-books .bf-single{margin-top:40px;padding-top:24px;border-top:1px solid rgba(201,164,92,.25);display:flex;flex-wrap:wrap;justify-content:center;gap:14px 14px;font-size:20px;color:var(--muted)}
+#ipf-books .bf-single span{width:100%}
+#ipf-books .bf-single a{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold2);border:1px solid rgba(201,164,92,.55);border-radius:999px;padding:9px 22px;transition:background .3s,color .3s}#ipf-books .bf-single a:hover{background:var(--gold2);color:#000}#ipf-books .bf-single a small{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-left:8px}
+@media (max-width:600px){#ipf-books .bf-trio{gap:14px}#ipf-books .bf-trio figure{width:100px}#ipf-books .bf-trio img{height:140px}#ipf-books .bf-trio figcaption{font-size:15px}#ipf-books .bf-single{flex-direction:column}}
+@media (max-width:600px){#ipf-books .bf-books{grid-template-columns:1fr}#ipf-books .bf-book img{height:190px}}
 </style>
 
-<div class="xmas-band"><svg class="xb-ico" viewBox="0 0 20 24" width="16" height="19" aria-hidden="true"><path d="M10 1l2 3.2h-1.2l3.4 4.6h-1.6l4 5.4h-2l4 5.3H1.4l4-5.3h-2l4-5.4H5.8l3.4-4.6H8z" fill="#e8cf96"/><rect x="8.6" y="19.5" width="2.8" height="3.5" fill="#c9a45c"/></svg> <b>Order now to receive it before Christmas</b> <a href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">Order on Amazon &rarr;</a></div>
+<div class="xmas-band"><span class="bf-tag">Black Friday</span> <b>Buy 2 books, get the 3rd free &middot; Limited-time offer</b> <a href="#ipf-offer">Explore the offer &rarr;</a></div>
 <!-- HERO -->
 <header class="hero">
   <div class="bgshow hero-bg" aria-hidden="true"><div class="slide on" style="background-image:url(art-14.jpg)"></div><div class="slide" style="background-image:url(art-140.jpg)"></div><div class="slide" style="background-image:url(art-60.jpg)"></div><div class="slide" style="background-image:url(art-22.jpg)"></div><div class="slide" style="background-image:url(art-127.jpg)"></div><div class="slide" style="background-image:url(art-6.jpg)"></div></div>
   <canvas id="ipf-smoke"></canvas>
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow rv">A thoughtful gift for the holidays</div>
+      <div class="eyebrow rv">Black Friday &middot; Buy 2, get the 3rd free</div>
       <h1 class="rv d1">Before we learned to write, <em>we learned to smell.</em></h1>
       <div class="author-chip rv d2"><img src="creezy.jpg" alt="Creezy Courtoy"><div><b>Creezy Courtoy</b><span>World perfume historian &middot; Founder &amp; Chair of the International Perfume Foundation</span></div></div>
-      <p class="lead rv d2">The new book by Creezy Courtoy: a journey through the civilizations where flowers, resins and precious oils spoke to the divine. A beautiful gift for perfume lovers, history enthusiasts and curious minds.</p>
+      <p class="lead rv d2">The new book by Creezy Courtoy: a journey through the civilizations where flowers, resins and precious oils spoke to the divine. Essential reading for perfume lovers, history enthusiasts and curious minds.</p>
       <div class="ctas rv d3">
-        <a class="btn btn-gold" href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">Order now for Christmas &rarr;</a>
+        <a class="btn btn-gold" href="#ipf-offer">Buy 2, get the 3rd free &rarr;</a>
         <a class="btn btn-ghost" href="#ipf-collection">Explore the collection</a>
       </div>
       <ul class="trust rv d3"><li>Paperback</li><li>151 pages</li><li>In English</li><li>Shipped by Amazon</li><li>Foreword by Pierre Dinand</li></ul>
@@ -348,38 +380,38 @@
         <div class="tag">New &middot; 2026</div>
         <h3>The Sacred Heritage of Perfume</h3>
         <p>The spiritual, cultural and botanical traditions of fragrance across the great civilizations of the world.</p><div class="bestfor"><span>Perfect for</span>Lovers of history, spirituality and ancient rituals.</div>
-        <a class="btn" href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">View on Amazon</a>
+        <a class="btn" href="#ipf-offer">See the offer</a>
       </div>
       <div class="bk rv d1">
         <div class="cv"><img loading="lazy" src="world-perfume-heritage.jpg" alt="World Perfume Heritage"></div>
         <div class="tag">Foreword by Pascal Morabito</div>
         <h3>World Perfume Heritage</h3>
         <p>Fragrance as a bridge between times, places and cultures, from sacred temples to the ateliers of master perfumers.</p><div class="bestfor"><span>Perfect for</span>Anyone curious about the cultural story of perfume.</div>
-<a class="btn" href="https://www.amazon.com/dp/B0G1Y8FZ19" target="_blank" rel="noopener">View on Amazon</a>
+<a class="btn" href="#ipf-offer">See the offer</a>
       </div>
       <div class="bk rv d2">
         <div class="cv"><img loading="lazy" src="natural-perfumery.jpg" alt="Natural Perfumery"></div>
         <div class="tag">Foreword by Ivan Borrego Valverde</div>
         <h3>Natural Perfumery</h3>
         <p>The return of flowers in perfumes, and why we are rediscovering the power of natural scents.</p><div class="bestfor"><span>Perfect for</span>Fans of natural perfumes, flowers and well-being.</div>
-<a class="btn" href="https://www.amazon.com/dp/B0FR92RW1L" target="_blank" rel="noopener">View on Amazon</a>
+<a class="btn" href="#ipf-offer">See the offer</a>
       </div>
     </div>
-    <a class="offer-pill" href="#ipf-offer">Holiday offer when you buy two books <span>&rarr;</span></a>
+    <a class="offer-pill" href="#ipf-offer">Black Friday: buy 2 books, get the 3rd free <span>&rarr;</span></a>
   </div>
 </section>
 
 <!-- GIFT -->
 <section class="giftband">
   <div class="wrap rv">
-    <div class="eyebrow">A gift to remember</div>
-    <h2>More than a book. A journey worth giving.</h2>
+    <div class="eyebrow">Who it's for</div>
+    <h2>More than a book. A journey through scent and time.</h2>
     <div class="gifts">
       <div><h3>The perfume lover</h3><p>For someone who collects fragrances and wants to know where they come from.</p></div>
       <div><h3>The history enthusiast</h3><p>Twelve civilizations, from Egypt to Japan, told through their sacred scents.</p></div>
       <div><h3>The soul seeker</h3><p>For lovers of incense, rituals, nature and moments of calm.</p></div>
     </div>
-    <a class="btn btn-gold" href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">Order it for Christmas &rarr;</a>
+    <a class="btn btn-gold" href="#ipf-offer">See the Black Friday offer &rarr;</a>
   </div>
 </section>
 
@@ -397,7 +429,7 @@
         <div><b>151</b>Pages</div>
         <div><b>Pierre Dinand</b>Foreword</div>
       </div>
-      <a class="btn btn-gold" href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">Get Your Copy on Amazon &rarr;</a>
+      <a class="btn btn-gold" href="#ipf-offer">Buy 2, get the 3rd free &rarr;</a>
     </div>
   </div>
 </section>
@@ -486,7 +518,7 @@
       </div>
 <div class="reader-nav"><button type="button" id="ipf-prev" aria-label="Previous pages">&larr;</button><span id="ipf-pagecount">1 / 6</span><button type="button" id="ipf-next" aria-label="Next pages">&rarr;</button></div>
     </div>
-    <div class="cta"><a class="btn btn-gold" href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">Continue reading: get your copy &rarr;</a></div>
+    <div class="cta"><a class="btn btn-gold" href="#ipf-offer">Continue reading: get the 3-book offer &rarr;</a></div>
   </div>
 </section>
 
@@ -503,24 +535,26 @@
 <section class="pad offer" id="ipf-offer">
   <div class="wrap">
     <div class="offer-card rv">
-      <div class="eyebrow">Holiday gift offer</div>
-      <h2>Buy any two books, receive an exclusive gift</h2>
-      <p>Order any two of Creezy Courtoy's books on Amazon (two different titles, or two copies to give) and receive a special bonus from the International Perfume Foundation. Offer valid until December 31, 2026. Your gift is sent by email within 48 hours.</p>
-      <!-- TODO : nom et description du bonus à valider avec Creezy -->
-      <div class="todo">[Bonus à définir : masterclass, guide PDF ou webinaire]</div>
-      <div class="steps">
-        <div><b>1</b>Order two books on Amazon</div>
-        <div><b>2</b>Send us your order confirmation below</div>
-        <div><b>3</b>Receive your gift by email</div>
+      <div class="bf-giant" aria-hidden="true">BLACK FRIDAY</div>
+      <div class="bf-badge">Black Friday exclusive &middot; Limited-time offer</div>
+      <h2>Buy 2 books, get the 3rd free</h2>
+      <p>The complete Creezy Courtoy collection: The Sacred Heritage of Perfume, World Perfume Heritage and Natural Perfumery. Order the set of three and pay for only two, shipped directly by the author.</p>
+      <div class="bf-trio">
+        <figure><img src="sacred-heritage.jpg" alt="The Sacred Heritage of Perfume"><figcaption>The Sacred Heritage of Perfume</figcaption></figure>
+        <figure><img src="world-perfume-heritage.jpg" alt="World Perfume Heritage"><figcaption>World Perfume Heritage</figcaption></figure>
+        <figure><span class="bf-sale">Free</span><img src="natural-perfumery.jpg" alt="Natural Perfumery"><figcaption>Natural Perfumery</figcaption></figure>
       </div>
-      <!-- TODO : brancher le formulaire (Formspree, Tally ou formulaire Weebly). Action actuelle désactivée. -->
-      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you! We will be in touch soon.'">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <input type="text" name="order" placeholder="Amazon order number">
-        <input type="file" name="proof" accept="image/*,.pdf">
-        <button class="btn btn-gold" type="submit">Claim my gift</button>
-      </form>
+      <div class="bf-formula"><span>2 books</span> + <span>1 free</span></div>
+      <!-- TODO : remplacer #STRIPE par le lien de paiement Stripe envoye par Creezy -->
+      <a class="btn btn-gold bf-cta" href="#STRIPE" target="_blank" rel="noopener">Order the 3-book set &rarr;</a>
+      <p class="bf-note">Limited-time Black Friday offer. Secure payment by Stripe.</p>
+      <div class="bf-single">
+        <span>Just one book? Available on Amazon:</span>
+        <a href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">The Sacred Heritage of Perfume <small>on Amazon</small></a>
+        <a href="https://www.amazon.com/dp/B0G1Y8FZ19" target="_blank" rel="noopener">World Perfume Heritage <small>on Amazon</small></a>
+        <a href="https://www.amazon.com/dp/B0FR92RW1L" target="_blank" rel="noopener">Natural Perfumery <small>on Amazon</small></a>
+      </div>
+    
     </div>
   </div>
 </section>
@@ -528,9 +562,9 @@
 <!-- FINAL CTA -->
 <section class="final">
   <div class="wrap rv">
-    <div class="eyebrow">A gift that tells a story</div>
+    <div class="eyebrow">Black Friday &middot; Limited-time offer</div>
     <h2>For everyone who loves fragrance, history and the beauty of nature</h2>
-    <a class="btn btn-gold" href="https://www.amazon.com/dp/B0HR5H1SWW" target="_blank" rel="noopener">Get The Sacred Heritage of Perfume &rarr;</a>
+    <a class="btn btn-gold" href="#ipf-offer">Claim the Black Friday offer &rarr;</a>
   </div>
 </section>
 
@@ -548,9 +582,9 @@
   root.querySelectorAll('[data-tilt]').forEach(function(img){if(reduce)return;img.addEventListener('mousemove',function(e){var r=img.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;img.style.transform='rotateY('+x*14+'deg) rotateX('+(-y*14)+'deg) scale(1.02)';});img.addEventListener('mouseleave',function(){img.style.transform='';});});
   // Halo sur les cartes
   root.querySelectorAll('.stop').forEach(function(s){s.addEventListener('mousemove',function(e){var r=s.getBoundingClientRect();s.style.setProperty('--mx',(e.clientX-r.left)+'px');s.style.setProperty('--my',(e.clientY-r.top)+'px');});});
-  // Compte à rebours Noël
+  // Masque le bandeau après le 31/12
   var xd=root.querySelector('.xmas-band');
-  if(xd){var now=new Date(),xm=new Date(now.getFullYear(),11,25),dd=Math.ceil((xm-now)/864e5);if(dd<=0)root.querySelector('.xmas-band').style.display='none';}
+  if(xd){var now=new Date(),xm=new Date(now.getFullYear(),11,31),dd=Math.ceil((xm-now)/864e5);if(dd<=0)root.querySelector('.xmas-band').style.display='none';}
   // Défilement des flacons sur mobile
   var pdl=root.querySelector('.pd-icons');
   if(pdl&&window.matchMedia('(max-width:600px)').matches){pdl.innerHTML+=pdl.innerHTML;}
